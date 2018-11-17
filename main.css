@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Alex Brush', cursive;
+}
+h1{
+	color: #db3951;
+    font-size: 5em;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(img/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section .move {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    background: url(img/move.png);
+    background-repeat: repeat-x;
+    top: 0px;
+    left: 0;
+    animation: animate 10s linear infinite;
+}
+
+section .move:before {
+    content: '';
+    width: 100%;
+    height: 500px;
+    background: url(img/move.png);
+    position: absolute;
+    top: -60px;
+    left: 0;
+    opacity: 0.4;
+    animation: animate-reverse 14s linear infinite;
+}
+
+section .move:after {
+    content: '';
+    width: 100%;
+    height: 500px;
+    background: url(img/move.png);
+    position: absolute;
+    top: 0px;
+    left: 0;
+    opacity: 0.4;
+    animation-delay: 10s;
+    animation: animate 14s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 500px;
+    }
+}
+
+@keyframes animate-reverse {
+    0% {
+        background-position: 500px
+    }
+
+    100% {
+        background-position: 0px
+    }
+}
